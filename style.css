@@ -1,26 +1,138 @@
-/* Dark Mode Styling */
-.dark {
-    background: #1a202c;
-    color: #cbd5e0;
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Add other CSS styles here as needed */
-body {
-    font-family: 'Sans-serif', sans-serif;
+/* Dynamic Space Background */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/random?space') center/cover no-repeat;
+    animation: space-move 20s linear infinite;
+    z-index: -1;
 }
-.bg-gradient-to-r {
-    background: linear-gradient(to right, #1a202c, #1e40af);
+
+@keyframes space-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 100%);
+    }
 }
-.text-blue-400 {
-    color: #63b3ed;
+
+/* Text Animation */
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.1em solid #fff;
+    animation: typing 4s steps(30) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
 }
-.text-blue-300 {
-    color: #7f9cf5;
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
-.text-gray-300 {
-    color: #e2e8f0;
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
 }
-.text-gray-200 {
-    color: #edf2f7;
+
+/* 3D Hover Effect */
+.hover-3d {
+    perspective: 1000px;
+    display: inline-block;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-3d:hover {
+    transform: rotateY(15deg) rotateX(10deg);
+}
+
+/* Morphing Button */
+.morph {
+    transition: all 0.4s ease-in-out;
+}
+
+.morph:hover {
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Fireworks effect (simple) */
+.fireworks {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.fireworks.active {
+    display: block;
+}
+
+/* Hover Background Effect */
+.hover-bg:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Floating Circles */
+.floating {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* SVG & Canvas art */
+.canvas-art {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Page Loader */
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #fff;
+    display: none;
 }
 

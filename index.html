@@ -1,52 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Nerd | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Dynamic Space Background */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random?space') center/cover no-repeat;
+            animation: space-move 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes space-move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100%, 100%);
+            }
+        }
+
+        /* Text Animation */
+        .typing {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.1em solid #fff;
+            animation: typing 4s steps(30) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* 3D Hover Effect */
+        .hover-3d {
+            perspective: 1000px;
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+        }
+
+        .hover-3d:hover {
+            transform: rotateY(15deg) rotateX(10deg);
+        }
+
+        /* Morphing Button */
+        .morph {
+            transition: all 0.4s ease-in-out;
+        }
+
+        .morph:hover {
+            border-radius: 50%;
+            background-color: #fff;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* Fireworks effect (simple) */
+        .fireworks {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+
+        .fireworks.active {
+            display: block;
+        }
+
+        /* Hover Background Effect */
+        .hover-bg:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Floating Circles */
+        .floating {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* SVG & Canvas art */
+        .canvas-art {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        /* Page Loader */
+        #loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: #fff;
+            display: none;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-r from-gray-900 to-blue-800 text-gray-200 font-sans transition-all">
-    <header class="text-center py-6">
-        <h1 class="text-4xl font-bold text-blue-400">Welcome to My Portfolio</h1>
-        <p class="text-lg text-gray-300">Data Science | Web Dev | Tech Enthusiast ⚡</p>
-        <button onclick="toggleTheme()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">Toggle Dark Mode</button>
+
+<body class="bg-black text-white font-sans transition-all relative">
+    <div id="loader">Loading...</div>
+    <div class="floating" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating" style="top: 40%; left: 80%; animation-delay: 1s;"></div>
+    <div class="floating" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+
+    <header class="text-center py-12 bg-gray-900 text-white rounded-b-xl shadow-modern">
+        <h1 class="text-5xl font-extrabold hover-3d">Welcome to My Portfolio</h1>
+        <p class="text-xl mt-4 typing">Data Science | Web Development | Tech Enthusiast ⚡</p>
     </header>
-    
-    <section class="max-w-4xl mx-auto p-6">
-        <h2 class="text-2xl font-semibold text-blue-300">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105">
-                <h3 class="text-xl font-bold text-blue-300">Data Viz Project</h3>
-                <p class="text-gray-400">A deep dive into data storytelling with visual insights.</p>
-                <a href="https://github.com/datanerd96/project1" class="text-blue-400 font-semibold">View Project →</a>
+
+    <section class="max-w-6xl mx-auto p-8 mt-10 space-y-8">
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
+                <img src="https://cdn-images-1.medium.com/max/2600/1*gVHG2QrLy7evdjb9D9Vguw.png" alt="Data Viz Project"
+                    class="rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Data Viz Project</h3>
+                <p class="text-gray-700 mt-2">A deep dive into data storytelling with visual insights.</p>
+                <a href="#" class="text-black font-semibold mt-4 inline-block morph">View Project →</a>
             </div>
-            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105">
-                <h3 class="text-xl font-bold text-blue-300">Personal Website</h3>
-                <p class="text-gray-400">A fully responsive website showcasing my skills.</p>
-                <a href="https://github.com/datanerd96/website" class="text-blue-400 font-semibold">View Project →</a>
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
+                <img src="https://th.bing.com/th?q=Website+Landing+Page&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-WW&cc=NA&setlang=en&adlt=strict&t=1&mw=247"
+                    alt="Personal Website" class="rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Personal Website</h3>
+                <p class="text-gray-700 mt-2">A fully responsive website showcasing my skills.</p>
+                <a href="#" class="text-black font-semibold mt-4 inline-block morph">View Project →</a>
             </div>
         </div>
     </section>
-    
-    <section class="max-w-4xl mx-auto p-6 mt-6">
-        <h2 class="text-2xl font-semibold text-blue-300">Contact Me</h2>
-        <form class="bg-gray-800 p-4 rounded-xl shadow-lg mt-4">
-            <label class="block text-gray-300">Name</label>
-            <input type="text" class="w-full p-2 rounded-lg bg-gray-700 text-white">
-            <label class="block text-gray-300 mt-2">Email</label>
-            <input type="email" class="w-full p-2 rounded-lg bg-gray-700 text-white">
-            <label class="block text-gray-300 mt-2">Message</label>
-            <textarea class="w-full p-2 rounded-lg bg-gray-700 text-white"></textarea>
-            <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">Send</button>
+
+    <section class="max-w-6xl mx-auto p-8 mt-10">
+        <h2 class="text-3xl font-bold">Contact Me</h2>
+        <form class="bg-gray-100 p-8 rounded-xl shadow-lg mt-8" onsubmit="fireworksEffect()">
+            <label class="block text-gray-700">Name</label>
+            <input type="text" class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
+            
+            <label class="block text-gray-700 mt-4">Email</label>
+            <input type="email" class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
+            
+            <label class="block text-gray-700 mt-4">Message</label>
+            <textarea class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900"></textarea>
+
+            <button type="submit" class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out morph">Send</button>
         </form>
     </section>
-    
-    <footer class="text-center py-6 mt-6 text-gray-400">
-        <p>© 2025 Data Nerd | <a href="https://github.com/datanerd96" class="text-blue-400">GitHub</a></p>
+
+    <footer class="text-center py-6 mt-10 text-gray-600">
+        <p>© 2025 Data Nerd | <a href="#" class="text-black font-semibold">GitHub</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Fireworks -->
+    <div id="fireworks" class="fireworks"></div>
+
+    <!-- Canvas Art -->
+    <canvas id="canvas" class="canvas-art"></canvas>
+
+    <script>
+        // Loader Simulation
+        window.addEventListener("load", () => {
+            document.getElementById("loader").style.display = "none";
+        });
+
+        // Fireworks Effect on Form Submit
+        function fireworksEffect() {
+            let fireworks = document.getElementById('fireworks');
+            fireworks.classList.add('active');
+            setTimeout(() => fireworks.classList.remove('active'), 3000);
+        }
+
+        // Canvas Art (Random Drawing)
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        canvas.addEventListener('mousemove', (e) => {
+            ctx.beginPath();
+            ctx.arc(e.x, e.y, 10, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fill();
+        });
+    </script>
 </body>
+
 </html>
 
