@@ -1,13 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-h1, h2 {
-    color: #333;
-}
+/* Custom CSS - style.css */
+
+/* Change default link color */
 a {
-    color: #007bff;
-    text-decoration: none;
+    color: #4B9CE2; /* Set the link color */
+}
+
+/* Add a hover effect for the header */
+header:hover {
+    background-color: #1e3a8a; /* Dark blue shade */
+}
+
+/* Custom button or link styling */
+button {
+    background-color: #3B82F6; /* Button background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside button */
+    font-weight: bold; /* Bold font for text */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #2563EB; /* Darker blue when hovered */
 }
 

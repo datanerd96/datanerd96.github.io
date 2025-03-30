@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Charset and viewport for responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Data Nerd</title>
+    
+    <!-- Title of the page -->
+    <title>Data Nerd | Portfolio</title>
+    
+    <!-- TailwindCSS via CDN for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Link to custom styles (style.css) -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Data Scientist | Web Developer | Problem Solver</p>
+<body class="bg-gradient-to-r from-gray-900 to-blue-800 text-gray-200 font-sans">
+    
+    <!-- Header Section -->
+    <header class="text-center py-6">
+        <!-- Main Title -->
+        <h1 class="text-4xl font-bold text-blue-400">Welcome to My Portfolio</h1>
+        
+        <!-- Subtitle or Tagline -->
+        <p class="text-lg text-gray-300">Data Science | Web Dev | Tech Enthusiast ⚡</p>
     </header>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li><a href="https://github.com/datanerd96/project1">Data Visualization Project</a></li>
-            <li><a href="https://github.com/datanerd96/website">Personal Website</a></li>
-        </ul>
+    
+    <!-- Projects Section -->
+    <section class="max-w-4xl mx-auto p-6">
+        <!-- Heading for projects -->
+        <h2 class="text-2xl font-semibold text-blue-300">Projects</h2>
+        
+        <!-- Grid layout for displaying projects -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <!-- First Project Card -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-xl font-bold text-blue-300">Data Viz Project</h3>
+                <p class="text-gray-400">A deep dive into data storytelling with visual insights.</p>
+                
+                <!-- Link to GitHub project -->
+                <a href="https://github.com/datanerd96/project1" class="text-blue-400 font-semibold">View Project →</a>
+            </div>
+            
+            <!-- Second Project Card -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-xl font-bold text-blue-300">Personal Website</h3>
+                <p class="text-gray-400">A fully responsive website showcasing my skills.</p>
+                
+                <!-- Link to GitHub project -->
+                <a href="https://github.com/datanerd96/website" class="text-blue-400 font-semibold">View Project →</a>
+            </div>
+        </div>
     </section>
-
-    <footer>
-        <p>© 2025 Data Nerd | <a href="https://github.com/datanerd96">GitHub</a></p>
+    
+    <!-- Footer Section -->
+    <footer class="text-center py-6 mt-6 text-gray-400">
+        <!-- Copyright and GitHub link -->
+        <p>© 2025 Data Nerd | <a href="https://github.com/datanerd96" class="text-blue-400">GitHub</a></p>
     </footer>
 </body>
 </html>
