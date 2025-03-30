@@ -1,25 +1,32 @@
-/* Custom CSS - style.css */
-
-/* Change default link color */
-a {
-    color: #4B9CE2; /* Set the link color */
+body.dark { background: #1a202c; color: #cbd5e0; }
+.project-card {
+    background: #2d3748;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
-
-/* Add a hover effect for the header */
-header:hover {
-    background-color: #1e3a8a; /* Dark blue shade */
+.project-card:hover {
+    transform: scale(1.05);
 }
-
-/* Custom button or link styling */
-button {
-    background-color: #3B82F6; /* Button background color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px; /* Padding inside button */
-    font-weight: bold; /* Bold font for text */
+.contact-form {
+    background: #2d3748;
+    padding: 1rem;
+    border-radius: 0.75rem;
 }
-
-/* Button hover effect */
-button:hover {
-    background-color: #2563EB; /* Darker blue when hovered */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #4a5568;
+    color: white;
+    margin-top: 0.5rem;
+}
+.contact-form button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #3182ce;
+    color: white;
+    border-radius: 0.5rem;
 }
 
