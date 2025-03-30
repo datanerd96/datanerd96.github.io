@@ -1,32 +1,26 @@
-body.dark { background: #1a202c; color: #cbd5e0; }
-.project-card {
-    background: #2d3748;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+/* Dark Mode Styling */
+.dark {
+    background: #1a202c;
+    color: #cbd5e0;
 }
-.project-card:hover {
-    transform: scale(1.05);
+
+/* Add other CSS styles here as needed */
+body {
+    font-family: 'Sans-serif', sans-serif;
 }
-.contact-form {
-    background: #2d3748;
-    padding: 1rem;
-    border-radius: 0.75rem;
+.bg-gradient-to-r {
+    background: linear-gradient(to right, #1a202c, #1e40af);
 }
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background: #4a5568;
-    color: white;
-    margin-top: 0.5rem;
+.text-blue-400 {
+    color: #63b3ed;
 }
-.contact-form button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #3182ce;
-    color: white;
-    border-radius: 0.5rem;
+.text-blue-300 {
+    color: #7f9cf5;
+}
+.text-gray-300 {
+    color: #e2e8f0;
+}
+.text-gray-200 {
+    color: #edf2f7;
 }
 
