@@ -1,143 +1,120 @@
-/* General Styles */
+/* General body styling */
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Dynamic Space Background */
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://source.unsplash.com/random?space') center/cover no-repeat;
-    animation: space-move 20s linear infinite;
-    z-index: -1;
+/* Header styling */
+h1, h2 {
+    color: #1E90FF; /* Dodger Blue for primary headings */
 }
 
-@keyframes space-move {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(100%, 100%);
-    }
+/* Link styling */
+a {
+    color: #9B59B6; /* Amethyst for links */
+    text-decoration: underline;
 }
 
-/* Text Animation */
-.typing {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 0.1em solid #fff;
-    animation: typing 4s steps(30) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+a:hover {
+    color: #FF6347; /* Tomato for hover state of links */
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+/* Button styling */
+button, .cta-btn {
+    background-color: #FF6347; /* Tomato for CTA buttons */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-@keyframes blinkCaret {
-    50% {
-        border-color: transparent;
-    }
+button:hover, .cta-btn:hover {
+    background-color: #20B2AA; /* Light Sea Green on hover */
 }
 
-/* 3D Hover Effect */
-.hover-3d {
-    perspective: 1000px;
-    display: inline-block;
-    transition: transform 0.3s ease-out;
-}
-
-.hover-3d:hover {
-    transform: rotateY(15deg) rotateX(10deg);
-}
-
-/* Morphing Button */
-.morph {
-    transition: all 0.4s ease-in-out;
-}
-
-.morph:hover {
-    border-radius: 50%;
-    background-color: #fff;
-    color: #000;
-    transform: scale(1.1);
-}
-
-/* Fireworks effect (simple) */
-.fireworks {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-}
-
-.fireworks.active {
-    display: block;
-}
-
-/* Hover Background Effect */
-.hover-bg:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Floating Circles */
+/* Floating effect */
 .floating {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: float 5s infinite ease-in-out;
+    background: rgba(30, 144, 255, 0.3); /* Dodger Blue with transparency for floating circles */
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
+/* Fireworks effect */
+.fireworks {
+    background: rgba(255, 99, 71, 0.5); /* Tomato with transparency for fireworks */
+}
+
+/* Text readability */
+p, li, span {
+    color: rgba(255, 255, 255, 0.8); /* Slightly muted white text for readability */
+}
+
+/* Background for sections */
+.section-background {
+    background: #2C3E50; /* Dark grayish-blue background for sections */
+}
+
+/* Hover Effects */
+.hover-bg:hover {
+    background-color: rgba(30, 144, 255, 0.2); /* Dodger Blue with transparency */
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
 
-    50% {
-        transform: translateY(-25px);
+    .cta-btn {
+        padding: 8px 16px; /* Slightly smaller CTA buttons */
     }
 
-    100% {
-        transform: translateY(0);
+    h1 {
+        font-size: 32px; /* Smaller heading for mobile */
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller subheading for mobile */
+    }
+
+    .floating {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fireworks {
+        width: 50px;
+        height: 50px;
     }
 }
 
-/* SVG & Canvas art */
-.canvas-art {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px; /* Further adjustment for very small screens */
+    }
 
-/* Page Loader */
-#loader {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: #fff;
-    display: none;
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .cta-btn {
+        padding: 6px 12px;
+    }
+
+    .floating {
+        width: 30px;
+        height: 30px;
+    }
+
+    .fireworks {
+        width: 40px;
+        height: 40px;
+    }
 }
 
