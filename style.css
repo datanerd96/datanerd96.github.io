@@ -1,120 +1,259 @@
-/* General body styling */
+/* Global Styles */
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary-color: #1f2937;
+  --text-light: #f3f4f6;
+  --text-dark: #111827;
+  --bg-dark: #000000;
+  --bg-light: #f3f4f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #000000; /* Black background */
-    color: #FFFFFF; /* White text */
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header styling */
-h1, h2 {
-    color: #1E90FF; /* Dodger Blue for primary headings */
+/* Loader Animation */
+#loader {
+  transition: opacity 0.5s ease-out;
 }
 
-/* Link styling */
-a {
-    color: #9B59B6; /* Amethyst for links */
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #FF6347; /* Tomato for hover state of links */
-}
-
-/* Button styling */
-button, .cta-btn {
-    background-color: #FF6347; /* Tomato for CTA buttons */
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover, .cta-btn:hover {
-    background-color: #20B2AA; /* Light Sea Green on hover */
-}
-
-/* Floating effect */
+/* Floating Elements Animation */
 .floating {
-    background: rgba(30, 144, 255, 0.3); /* Dodger Blue with transparency for floating circles */
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 70%);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+  z-index: -1;
 }
 
-/* Fireworks effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* 3D Hover Effect */
+.hover-3d {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern Shadow */
+.shadow-modern {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Typing Animation */
+.typing {
+  border-right: 2px solid var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(40) 1s 1 normal both, blink 1s steps(1) infinite;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Hover Background Effect */
+.hover-bg {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hover-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 100%);
+  z-index: -1;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.hover-bg:hover::before {
+  transform: translateY(0);
+}
+
+/* Morphing Button Effect */
+.morph {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.morph::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.morph:hover::after {
+  width: 100%;
+}
+
+/* Fireworks Effect */
 .fireworks {
-    background: rgba(255, 99, 71, 0.5); /* Tomato with transparency for fireworks */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.8) 150%);
 }
 
-/* Text readability */
-p, li, span {
-    color: rgba(255, 255, 255, 0.8); /* Slightly muted white text for readability */
+.fireworks.active {
+  opacity: 1;
+  animation: fireworks 3s ease-out;
 }
 
-/* Background for sections */
-.section-background {
-    background: #2C3E50; /* Dark grayish-blue background for sections */
+@keyframes fireworks {
+  0% {
+    background-color: rgba(59, 130, 246, 0);
+  }
+  25% {
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.2);
+  }
+  75% {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+  100% {
+    background-color: rgba(59, 130, 246, 0);
+  }
 }
 
-/* Hover Effects */
-.hover-bg:hover {
-    background-color: rgba(30, 144, 255, 0.2); /* Dodger Blue with transparency */
+/* Scroll Reveal Animation */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Media Queries for responsiveness */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    .cta-btn {
-        padding: 8px 16px; /* Slightly smaller CTA buttons */
-    }
-
-    h1 {
-        font-size: 32px; /* Smaller heading for mobile */
-    }
-
-    h2 {
-        font-size: 24px; /* Smaller subheading for mobile */
-    }
-
-    .floating {
-        width: 40px;
-        height: 40px;
-    }
-
-    .fireworks {
-        width: 50px;
-        height: 50px;
-    }
+section.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 12px; /* Further adjustment for very small screens */
-    }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .typing {
+    animation: none;
+    border-right: none;
+  }
+  
+  .hover-3d:hover {
+    transform: none;
+  }
+  
+  .floating {
+    display: none;
+  }
+}
 
-    h1 {
-        font-size: 28px;
-    }
+/* Form Status Messages */
+#form-status.text-green-500 {
+  color: #10b981;
+}
 
-    h2 {
-        font-size: 20px;
-    }
+#form-status.text-red-500 {
+  color: #ef4444;
+}
 
-    .cta-btn {
-        padding: 6px 12px;
-    }
+/* Project Card Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
 
-    .floating {
-        width: 30px;
-        height: 30px;
-    }
+.hover-scale:hover {
+  transform: scale(1.05);
+}
 
-    .fireworks {
-        width: 40px;
-        height: 40px;
-    }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Focus Styles for Accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Skip to Content Link for Accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  left: 50%;
+  transform: translateX(-50%);
 }
 

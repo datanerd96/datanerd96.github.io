@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,57 +8,261 @@
     <title>Data Nerd | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Added meta tags for SEO -->
+    <meta name="description" content="Portfolio of a Data Science and Web Development enthusiast showcasing projects and skills">
+    <meta name="keywords" content="data science, web development, portfolio, projects">
+    <!-- Added favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" type="image/png">
+    <!-- Added Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="bg-black text-white font-sans transition-all relative">
-    <div id="loader">Loading...</div>
+    <div id="loader" class="fixed inset-0 flex items-center justify-center bg-black z-50">
+        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
+    </div>
     <div class="floating" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
     <div class="floating" style="top: 40%; left: 80%; animation-delay: 1s;"></div>
     <div class="floating" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
 
-    <header class="text-center py-12 bg-gray-900 text-white rounded-b-xl shadow-modern">
-        <h1 class="text-5xl font-extrabold hover-3d">Welcome to My Portfolio</h1>
+    <!-- Added navigation menu -->
+    <nav class="bg-gray-900 p-4 sticky top-0 z-10 shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hover-3d">Data<span class="text-blue-400">Nerd</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 rounded-b-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-16 bg-gradient-to-b from-gray-900 to-black text-white rounded-b-xl shadow-modern">
+        <h1 class="text-5xl md:text-6xl font-extrabold hover-3d">Welcome to My Portfolio</h1>
         <p class="text-xl mt-4 typing">Data Science | Web Development | Tech Enthusiast ⚡</p>
+        <!-- Added CTA button -->
+        <a href="#contact" class="mt-8 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Get In Touch</a>
     </header>
 
-    <section class="max-w-6xl mx-auto p-8 mt-10 space-y-8">
-        <h2 class="text-3xl font-bold">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
-                <img src="https://cdn-images-1.medium.com/max/2600/1*gVHG2QrLy7evdjb9D9Vguw.png" alt="Data Viz Project"
-                    class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold">Data Viz Project</h3>
-                <p class="text-gray-700 mt-2">A deep dive into data storytelling with visual insights.</p>
-                <a href="#" class="text-black font-semibold mt-4 inline-block morph">View Project →</a>
+    <!-- Added About section -->
+    <section id="about" class="max-w-6xl mx-auto p-8 mt-10 space-y-8">
+        <h2 class="text-3xl font-bold">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+                <p class="text-lg">Hello! I'm a passionate data scientist and web developer with a keen interest in creating data-driven solutions and beautiful web experiences.</p>
+                <p class="text-lg">With expertise in Python, JavaScript, and various data visualization tools, I bring data stories to life through compelling visuals and interactive applications.</p>
+                <p class="text-lg">When I'm not coding, you can find me exploring new datasets, learning about the latest tech trends, or contributing to open-source projects.</p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://github.com/datanerd96" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jedidja-data/" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572528146320" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/arewethereyet.mu" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
             </div>
-            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
-                <img src="https://th.bing.com/th?q=Website+Landing+Page&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-WW&cc=NA&setlang=en&adlt=strict&t=1&mw=247"
-                    alt="Personal Website" class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold">Personal Website</h3>
-                <p class="text-gray-700 mt-2">A fully responsive website showcasing my skills.</p>
-                <a href="#" class="text-black font-semibold mt-4 inline-block morph">View Project →</a>
+            <div class="flex justify-center">
+                <img src="profile.jpg" 
+                     alt="Professional headshot" 
+                     class="rounded-full w-64 h-64 object-cover border-4 border-blue-400 shadow-xl">
             </div>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto p-8 mt-10">
-        <h2 class="text-3xl font-bold">Contact Me</h2>
-        <form class="bg-gray-100 p-8 rounded-xl shadow-lg mt-8" onsubmit="fireworksEffect()">
-            <label class="block text-gray-700">Name</label>
-            <input type="text" class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
-            
-            <label class="block text-gray-700 mt-4">Email</label>
-            <input type="email" class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
-            
-            <label class="block text-gray-700 mt-4">Message</label>
-            <textarea class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900"></textarea>
-
-            <button type="submit" class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out morph">Send</button>
-        </form>
+    <!-- Skills section -->
+    <section id="skills" class="max-w-6xl mx-auto p-8 mt-10 space-y-8 bg-gray-900 rounded-xl">
+        <h2 class="text-3xl font-bold">Skills & Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Data Analysis</h3>
+                <p class="text-gray-300 mt-2">Python, Pandas, NumPy, SQL, Data Cleaning, Statistical Analysis</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-laptop-code text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Web Development</h3>
+                <p class="text-gray-300 mt-2">HTML, CSS, JavaScript, React, Tailwind CSS, Responsive Design</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-brain text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Machine Learning</h3>
+                <p class="text-gray-300 mt-2">Scikit-learn, TensorFlow, Neural Networks, Classification, Regression</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Databases</h3>
+                <p class="text-gray-300 mt-2">MySQL, PostgreSQL, MongoDB, Database Design, Query Optimization</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-project-diagram text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Data Visualization</h3>
+                <p class="text-gray-300 mt-2">Matplotlib, Seaborn, Plotly, Tableau, D3.js, Interactive Dashboards</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-tools text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold">Tools & Platforms</h3>
+                <p class="text-gray-300 mt-2">Git, Docker, AWS, Google Cloud, Jupyter, VS Code, CI/CD</p>
+            </div>
+        </div>
     </section>
 
-    <footer class="text-center py-6 mt-10 text-gray-600">
-        <p>© 2025 Data Nerd | <a href="#" class="text-black font-semibold">GitHub</a></p>
+    <section id="projects" class="max-w-6xl mx-auto p-8 mt-10 space-y-8">
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
+                <img src="https://cdn-images-1.medium.com/max/2600/1*gVHG2QrLy7evdjb9D9Vguw.png" alt="Data Viz Project"
+                    class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold">Data Viz Project</h3>
+                <p class="text-gray-700 mt-2">A deep dive into data storytelling with visual insights using Python, Matplotlib, and Plotly.</p>
+                <div class="flex mt-4 space-x-2">
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Python</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Data Viz</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Plotly</span>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <a href="#" class="text-black font-semibold inline-block morph">View Project →</a>
+                    <a href="https://github.com/" target="_blank" class="text-gray-700 hover:text-black">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Personal Website" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold">Personal Website</h3>
+                <p class="text-gray-700 mt-2">A fully responsive website showcasing my skills and projects using modern web technologies.</p>
+                <div class="flex mt-4 space-x-2">
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">HTML/CSS</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">JavaScript</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Tailwind</span>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <a href="#" class="text-black font-semibold inline-block morph">View Project →</a>
+                    <a href="https://github.com/" target="_blank" class="text-gray-700 hover:text-black">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover-bg">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Machine Learning Model" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold">ML Prediction Model</h3>
+                <p class="text-gray-700 mt-2">A machine learning model for predicting customer behavior using historical transaction data.</p>
+                <div class="flex mt-4 space-x-2">
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Python</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">TensorFlow</span>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">ML</span>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <a href="#" class="text-black font-semibold inline-block morph">View Project →</a>
+                    <a href="https://github.com/" target="_blank" class="text-gray-700 hover:text-black">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Added View More button -->
+        <div class="text-center mt-8">
+            <a href="#" class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out">View More Projects</a>
+        </div>
+    </section>
+
+    <section id="contact" class="max-w-6xl mx-auto p-8 mt-10">
+        <h2 class="text-3xl font-bold">Contact Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
+            <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4">Get In Touch</h3>
+                <p class="text-gray-300 mb-6">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                        <span>jedidjacto@gmail.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                        <span>Tsumeb, Namibia</span>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://github.com/datanerd96" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jedidja-data/" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572528146320" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/arewethereyet.mu" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <form class="bg-gray-100 p-8 rounded-xl shadow-lg" id="contact-form" onsubmit="return submitForm(event)">
+                <label class="block text-gray-700">Name</label>
+                <input type="text" id="name" required class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
+                
+                <label class="block text-gray-700 mt-4">Email</label>
+                <input type="email" id="email" required class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900">
+                
+                <label class="block text-gray-700 mt-4">Message</label>
+                <textarea id="message" required class="w-full p-4 mt-2 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900 min-h-[150px]"></textarea>
+
+                <button type="submit" class="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out morph">Send Message</button>
+                <div id="form-status" class="mt-4 text-center hidden"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 mt-16 bg-gray-900 text-gray-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold">Data<span class="text-blue-400">Nerd</span></h3>
+                    <p class="mt-2">Turning data into meaningful insights</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/datanerd96" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jedidja-data/" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572528146320" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/arewethereyet.mu" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-700">
+                <p>© 2025 Data Nerd | All Rights Reserved</p>
+                <div class="mt-2 flex justify-center space-x-4 text-sm">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Fireworks -->
@@ -66,8 +271,73 @@
     <script>
         // Loader Simulation
         window.addEventListener("load", () => {
-            document.getElementById("loader").style.display = "none";
+            setTimeout(() => {
+                document.getElementById("loader").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("loader").style.display = "none";
+                }, 500);
+            }, 1000);
         });
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form Submission with Fireworks Effect
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Show success message
+                const formStatus = document.getElementById('form-status');
+                formStatus.textContent = "Thanks for your message! I'll get back to you soon.";
+                formStatus.classList.remove('hidden', 'text-red-500');
+                formStatus.classList.add('text-green-500');
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+                
+                // Trigger fireworks
+                fireworksEffect();
+                
+                return false;
+            } else {
+                const formStatus = document.getElementById('form-status');
+                formStatus.textContent = "Please fill in all fields.";
+                formStatus.classList.remove('hidden', 'text-green-500');
+                formStatus.classList.add('text-red-500');
+                return false;
+            }
+        }
 
         // Fireworks Effect on Form Submit
         function fireworksEffect() {
@@ -75,6 +345,24 @@
             fireworks.classList.add('active');
             setTimeout(() => fireworks.classList.remove('active'), 3000);
         }
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('section');
+        
+        function checkReveal() {
+            const triggerBottom = window.innerHeight * 0.8;
+            
+            revealElements.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('revealed');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
     </script>
 </body>
 
